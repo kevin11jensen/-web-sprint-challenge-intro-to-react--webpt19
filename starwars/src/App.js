@@ -1,39 +1,42 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import CharacterContainer from './components/CharacterContainer';
+import styled from 'styled-components';
+import darth from './images/darth.jpg';
+//parent styles for app
 import './App.css';
-import Character from './components/Character';
-import axios from 'axios';
 
 
-const App = () => {
-  // Try to think through what state you'll need for this app before starting. Then build out
-  // the state properties here.
-const [state, setState] = useState([])
-  // Fetch characters from the API in an effect hook. Remember, anytime you have a 
-  // side effect in a component, you want to think about which state and/or props it should
-  // sync up with, if any.
-  useEffect(() => {
-    axios
-      .get('https://swapi.dev/api/people/')
-      .then(res => {
-        console.log('response:', res.data.results)
-        setState(res.data.results)
-      })
-      .catch(err => {
-        console.log('error:', err)
-      })
-  })
+
+
+export default function App() {
 
   return (
     <div className="App">
-      <h1 className="Header">Characters</h1>
-      {state.map((character, id) => {
-        <Character 
-          character = {character}
-          key = {id}
-        />
-      })}
+      <ParentContainer>
+        <h1>Characters</h1>
+        <CharacterContainer />
+      </ParentContainer>
     </div>
   );
 }
+const ParentContainer = styled.div `
+  height: 100vh;
+  width: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background: url(${darth});
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  h1 {
+    margin-left: 1%;
+    color: white;
+    font-family: 'Roboto Mono', monospace;
+  }
+`
+// font-family: 'Anton', sans-serif;
 
-export default App;
+// font-family: 'Red Rose', cursive;
+
+// font-family: 'Roboto Mono', monospace;
+    
