@@ -13,7 +13,7 @@ export default function App() {
   return (
     <div className="App">
       <ParentContainer>
-        <h1>Characters</h1>
+        <h1 className = 'title-h1'>Characters</h1>
         <CharacterContainer />
       </ParentContainer>
     </div>
@@ -28,10 +28,12 @@ const ParentContainer = styled.div `
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  h1 {
+  .title-h1 {
     margin-left: 1%;
     color: white;
-    font-family: 'Roboto Mono', monospace;
+    font-family: 'Anton', sans-serif;
+    letter-spacing: .5rem;
+    font-weight: 200;
   }
 `
 // font-family: 'Anton', sans-serif;

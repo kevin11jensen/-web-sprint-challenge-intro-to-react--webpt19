@@ -35,6 +35,7 @@ const Card = styled.div `
     h1 {
         font-size: 1.6rem;
         padding: 1%;
+        font-family: 'Roboto Mono', monospace;
         span {
             color: lightsteelblue;
         }
@@ -43,16 +44,20 @@ const Card = styled.div `
     h2 {
         font-size: 1.2rem;
         padding: 1%;
+        font-family: 'Roboto Mono', monospace;
         span {
             color: aquamarine;
+            font-family: 'Red Rose', cursive;
         }
         .height {
             color: chartreuse;
+            
         }
     }
     h3 {
         padding-left: 1%;
         color: gold;
+        font-family: 'Red Rose', cursive;
     }
 `
 
