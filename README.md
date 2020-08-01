@@ -30,11 +30,63 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What is React JS and what problems does it solve? Support your answer with concepts introduced in class and from your personal research on the web.
 
+React is considered a User Interface Library.
+By creating a virtual DOM that represents
+the actual browser representation and 
+breaking the document into smaller
+components that are controlled by state,
+React re-renders only happen where
+necessary and not on the entire document.
+This allows the browser DOM to do less
+work, saving bandwidth, computer power 
+and time - all while allowing the user 
+a seemless experience.
+
+
 1. Describe component state.
+
+We need state for a component any time that
+it will have data that will change.
+For example: you may want to create a
+drop-down menu that opens/closes on the click
+of a button. You could use CSS classNames or
+.toggle() for this but since it is data that
+will be changing, you could use the setState
+function to toggle the drop down menu while
+keeping track of the dropdown menu's state
+in the state variable.
+
 
 1. Describe props.
 
+ Props give us a way to pass data down from
+ parent components to children. Recently we've
+ been learning how to make a GET request
+ using axios (inside of a useEffect hook of 
+ course) and storing the data in state.
+ We then map over that data and can produce
+ smaller child components that we can pass
+ the data down to using props.
+
+
 1. What are side effects, and how do you sync effects in a React component to changes of certain state or props?
+
+If a function modifies the state of 
+something outside of its own scope,
+then it is producing side effects. 
+An example of a side effect from what
+we've been working on is data fetching
+using axios. We put our axios call
+inside a useEffect hook in order to 
+control our side effects. To sink side
+effects with a React component we must
+make sure to pass them in the useEffect
+function and write them in our
+dependancy array so we don't get an 
+infinite loop.
+
+
+
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
